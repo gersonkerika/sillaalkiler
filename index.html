@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Sillas</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-image: url('fondo.jpg'); /* Reemplaza con la ruta a tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+            background-position: center; /* Centra la imagen en la pantalla */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+        .container {
+            flex: 1;
+            padding: 20px;
+            margin-left: 250px; /* Espacio para el menú */
+            border-radius: 8px; /* Bordes redondeados */
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 50px; /* Espacio debajo del título */
+            color: #000000; /* Color del encabezado */
+        }
+        .container p {
+            margin-bottom: 50px; /* Espacio debajo del párrafo */
+            color: #081269; /* Color del párrafo */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #a6270d; /* Color del texto de las etiquetas */
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #d41616; /* Borde del campo de entrada */
+            border-radius: 5px; /* Bordes redondeados en los campos de entrada */
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: rgb(172, 13, 13);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #87bbc1;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        /* Menú de navegación */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100vh;
+            background-color: #f4f4f4;
+            background-image: url('images/MENU.jpg'); /* Imagen de fondo del menú */
+            background-size: cover; /* Ajusta la imagen para cubrir el menú */
+            background-position: center; /* Centra la imagen en el menú */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            border-right: 1px solid #ddd;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            color: white; /* Asegura que el texto sea visible sobre el fondo */
+            background-color: black; /* Fondo negro para el texto "Menú" */
+            padding: 20px; /* Espacio alrededor del texto */
+            margin: -20px -20px 50px -30px; /* Ajusta el margen para el rectángulo negro */
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #0a166f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover {
+            background-color: #81a5a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <a href="index.html">Precios</a>
+        <a href="sillas.html">Sillas</a>
+        <a href="contactos.html">Contactos</a>
+        <a href="versiculos.html">Versiculos</a>
+    </div>
+
+    <div class="container">
+        <h1>Alquiler De Sillas "Mis Elizabeth"</h1>
+        <p>
+            ¡Bienvenidos a nuestro alquiler de sillas! Nos alegra mucho que estén aquí para conocer nuestro emprendimiento. Comenzamos esta aventura con tan solo 50 sillas, pero con mucho esfuerzo y dedicación, logramos crecer y mejorar constantemente. Nuestro objetivo es ofrecerles un servicio de calidad, con sillas cómodas y elegantes para cualquier tipo de evento. Estamos comprometidos en hacer que su experiencia sea excepcional. ¡Gracias por confiar en nosotros para hacer de sus ocasiones especiales algo aún más memorable!
+        </p>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="cantidadSillas">Cantidad de Sillas:</label>
+                <input type="number" id="cantidadSillas" name="cantidadSillas" min="1" placeholder="Ingresa la cantidad de sillas" required>
+            </div>
+            <div class="form-group">
+                <label for="dias">Número de días:</label>
+                <input type="number" id="dias" name="dias" min="1" required>
+    
+                <input type="button" value="Calcular" onclick="calcularCosto()">
+            </form>
+    
+            <div id="resultado"></div>
+        </div>
+    
+        <script>
+            function calcularCosto() {
+                // Obtener los valores del formulario
+                var cantidadSillas = parseInt(document.getElementById('cantidadSillas').value, 10);
+                var dias = parseInt(document.getElementById('dias').value, 10);
+    
+                // Definir el precio por silla en soles
+                var precioPorSilla = 0.50; // Asegúrate de que este valor esté en soles
+    
+                // Validar los valores
+                if (cantidadSillas > 0 && dias > 0) {
+                    // Calcular el costo total
+                    var costoDiario = cantidadSillas * precioPorSilla;
+                    var costoTotal = costoDiario * dias;
+    
+                    // Mostrar el resultado con el símbolo de soles
+                    document.getElementById('resultado').innerHTML = 
+                        "<div class='result'>El costo total por " + cantidadSillas + 
+                        " sillas durante " + dias + 
+                        " días es S/ " + costoTotal.toFixed(2) + ".</div>";
+                } else {
+                    document.getElementById('resultado').innerHTML = 
+                        "<div class='result'>Por favor, ingresa valores válidos.</div>";
+                }
+            }
+        </script>
+    </body>
+    </html>
