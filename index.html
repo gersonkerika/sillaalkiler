@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler de Sillas</title>
     <style>
-          body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -14,30 +14,39 @@
             background-size: cover; /* Ajusta la imagen para cubrir toda el área */
             background-position: center; /* Centra la imagen en la pantalla */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
         }
+
         .container {
             flex: 1;
             padding: 20px;
-            margin-left: 250px; /* Espacio para el menú */
+            margin: 0 auto;
+            max-width: 800px; /* Limita el ancho del contenedor */
             border-radius: 8px; /* Bordes redondeados */
+     
         }
+
         .container h1 {
             text-align: center;
             margin-bottom: 50px; /* Espacio debajo del título */
             color: #000000; /* Color del encabezado */
         }
+
         .container p {
             margin-bottom: 50px; /* Espacio debajo del párrafo */
             color: #081269; /* Color del párrafo */
         }
+
         .form-group {
             margin-bottom: 15px;
         }
+
         label {
             display: block;
             margin-bottom: 5px;
             color: #a6270d; /* Color del texto de las etiquetas */
         }
+
         input {
             width: 100%;
             padding: 8px;
@@ -45,6 +54,7 @@
             border: 1px solid #d41616; /* Borde del campo de entrada */
             border-radius: 5px; /* Bordes redondeados en los campos de entrada */
         }
+
         button {
             padding: 10px 15px;
             background-color: #007bff;
@@ -53,9 +63,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #87bbc1;
         }
+
         .result {
             margin-top: 20px;
             padding: 15px;
@@ -63,6 +75,7 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+
         /* Menú de navegación */
         .sidebar {
             position: fixed;
@@ -77,13 +90,17 @@
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             border-right: 1px solid #ddd;
             padding: 20px;
+            box-sizing: border-box;
         }
+
         .sidebar h2 {
             color: white; /* Asegura que el texto sea visible sobre el fondo */
             background-color: black; /* Fondo negro para el texto "Menú" */
             padding: 20px; /* Espacio alrededor del texto */
             margin: -20px -20px 50px -30px; /* Ajusta el margen para el rectángulo negro */
+            text-align: center;
         }
+
         .sidebar a {
             display: block;
             padding: 10px;
@@ -92,8 +109,31 @@
             text-decoration: none;
             font-weight: bold;
         }
+
         .sidebar a:hover {
             background-color: #81a5a8;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .container {
+                margin: 0;
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .sidebar h2 {
+                margin: 0;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -119,38 +159,38 @@
             <div class="form-group">
                 <label for="dias">Número de días:</label>
                 <input type="number" id="dias" name="dias" min="1" required>
-    
-                <input type="button" value="Calcular" onclick="calcularCosto()">
-            </form>
-    
-            <div id="resultado"></div>
-        </div>
-    
-        <script>
-            function calcularCosto() {
-                // Obtener los valores del formulario
-                var cantidadSillas = parseInt(document.getElementById('cantidadSillas').value, 10);
-                var dias = parseInt(document.getElementById('dias').value, 10);
-    
-                // Definir el precio por silla en soles
-                var precioPorSilla = 0.50; // Asegúrate de que este valor esté en soles
-    
-                // Validar los valores
-                if (cantidadSillas > 0 && dias > 0) {
-                    // Calcular el costo total
-                    var costoDiario = cantidadSillas * precioPorSilla;
-                    var costoTotal = costoDiario * dias;
-    
-                    // Mostrar el resultado con el símbolo de soles
-                    document.getElementById('resultado').innerHTML = 
-                        "<div class='result'>El costo total por " + cantidadSillas + 
-                        " sillas durante " + dias + 
-                        " días es S/ " + costoTotal.toFixed(2) + ".</div>";
-                } else {
-                    document.getElementById('resultado').innerHTML = 
-                        "<div class='result'>Por favor, ingresa valores válidos.</div>";
-                }
+            </div>
+            <button type="button" onclick="calcularCosto()">Calcular</button>
+        </form>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularCosto() {
+            // Obtener los valores del formulario
+            var cantidadSillas = parseInt(document.getElementById('cantidadSillas').value, 10);
+            var dias = parseInt(document.getElementById('dias').value, 10);
+
+            // Definir el precio por silla en soles
+            var precioPorSilla = 0.50; // Asegúrate de que este valor esté en soles
+
+            // Validar los valores
+            if (cantidadSillas > 0 && dias > 0) {
+                // Calcular el costo total
+                var costoDiario = cantidadSillas * precioPorSilla;
+                var costoTotal = costoDiario * dias;
+
+                // Mostrar el resultado con el símbolo de soles
+                document.getElementById('resultado').innerHTML = 
+                    "<div class='result'>El costo total por " + cantidadSillas + 
+                    " sillas durante " + dias + 
+                    " días es S/ " + costoTotal.toFixed(2) + ".</div>";
+            } else {
+                document.getElementById('resultado').innerHTML = 
+                    "<div class='result'>Por favor, ingresa valores válidos.</div>";
             }
-        </script>
-    </body>
-    </html>
+        }
+    </script>
+</body>
+</html>
