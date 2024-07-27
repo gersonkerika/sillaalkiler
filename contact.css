@@ -1,0 +1,156 @@
+/* Resetear márgenes y rellenos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url('fondo.jpg'); /* Reemplaza con la ruta a tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Menú de navegación */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Ancho del menú en pantallas grandes */
+    height: 100vh; /* Altura del menú para ocupar toda la pantalla */
+    background-color: #f4f4f4;
+    background-image: url('images/MENU.jpg'); /* Imagen de fondo del menú */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    transition: width 0.3s ease; /* Transición suave para el ancho */
+}
+
+.sidebar h2 {
+    color: white;
+    background-color: black;
+    padding: 20px;
+    margin: -20px -20px 50px -20px; /* Ajusta el margen según sea necesario */
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #0a166f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar a:hover {
+    background-color: #81a5a8;
+}
+.sidebar a:hover {
+    background-color: #81a5a8;
+}
+
+/* Contenedor principal */
+.container {
+    flex: 1;
+    padding: 20px;
+    margin-left: 250px; /* Espacio para el menú en pantallas grandes */
+    border-radius: 8px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000;
+}
+button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: rgb(172, 13, 13);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container p {
+    margin-bottom: 50px;
+    color: #081269;
+}
+
+/* Estilos para la información de contacto */
+.contact-info {
+    text-align: center; /* Centra el contenido de contacto */
+}
+
+.contact-info img {
+    max-width: 80%; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    border-radius: 10px; /* Bordes redondeados si es necesario */
+}
+
+.contact-info a {
+    display: block;
+    padding: 10px 15px;
+    margin-top: 20px; /* Separación del contenido superior */
+    color: white;
+    background-color: #25D366; /* Color de WhatsApp */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.contact-info a:hover {
+    background-color: #128C7E; /* Color de WhatsApp en hover */
+}
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para pantallas pequeñas (tabletas y móviles) */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 23%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        height: 100vh;  /* Ajusta la altura del menú */
+        position: relative; /* Cambia la posición para que no se solape con el contenido */
+        padding: 10px;
+        border-right: none; /* Elimina el borde derecho */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade sombra para dar profundidad */
+        background-color: rgba(244, 244, 244, 0.9); /* Fondo del menú con ligera opacidad */
+    }
+
+
+    .sidebar h2 {
+        margin: 0;
+        padding: 10px;
+        background-color: black;
+    }
+
+    .sidebar a {
+        margin: 5px 0;
+        padding: 8px;
+    }
+}
+
+
+    .sidebar a:hover {
+        background-color: #81a5a8; /* Color de fondo en hover */
+    }
+

@@ -4,127 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background-image: url('fondo.jpg'); /* Reemplaza con la ruta a tu imagen de fondo */
-            background-size: cover; /* Ajusta la imagen para cubrir toda el área */
-            background-position: center; /* Centra la imagen en la pantalla */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            overflow-x: hidden; /* Evita el desplazamiento horizontal */
-        }
-
-        .container {
-            flex: 1;
-            padding: 20px;
-            margin-left: 200px; /* Espacio para el menú */
-            max-width: calc(100% - 220px); /* Ajusta el ancho máximo según el espacio disponible */
-            box-sizing: border-box; /* Incluye padding en el cálculo del ancho total */
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 100vh;
-            background-color: #f4f4f4;
-            background-image: url('images/MENU.jpg'); /* Imagen de fondo del menú */
-            background-size: cover; /* Ajusta la imagen para cubrir el menú */
-            background-position: center; /* Centra la imagen en el menú */
-            background-repeat: no-repeat; /* Evita que la imagen se repita */
-            border-right: 1px solid #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .sidebar h2 {
-            color: white; /* Asegura que el texto sea visible sobre el fondo */
-            background-color: black; /* Fondo negro para el texto "Menú" */
-            padding: 20px; /* Espacio alrededor del texto */
-            margin: -20px -20px 50px -30px; /* Ajusta el margen para el rectángulo negro */
-            text-align: center;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 10px;
-            margin-bottom: 10px;
-            color: #0a166f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .sidebar a:hover {
-            background-color: #81a5a8;
-        }
-
-        .container h1 {
-            color: #000000; /* Color del encabezado */
-            text-align: center; /* Centra el encabezado */
-            margin-bottom: 20px; /* Espacio debajo del encabezado */
-        }
-
-        .container p {
-            color: #132358; /* Color del texto del párrafo */
-            text-align: center; /* Centra el texto del párrafo */
-            margin-bottom: 20px; /* Espacio debajo del párrafo */
-        }
-
-        .contact-info {
-            text-align: center; /* Centra el contenido dentro del contenedor de contacto */
-        }
-
-        .contact-info a {
-            display: inline-block;
-            padding: 10px 15px;
-            margin-top: 20px; /* Separación del contenido superior */
-            color: white;
-            background-color: #25D366; /* Color de WhatsApp */
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            background-color: #128C7E; /* Color de WhatsApp en hover */
-        }
-
-        .contact-info img {
-            max-width: 100%; /* Ajusta el ancho máximo al 100% del contenedor */
-            height: auto;
-            display: block;
-            margin: 0 auto; /* Centra la imagen horizontalmente */
-            border-radius: 10px; /* Bordes redondeados si es necesario */
-        }
-
-        .call-to-action {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-            text-align: center; /* Centra el texto */
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-
-            .container {
-                margin-left: 0;
-                max-width: 100%;
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="contact.css"> <!-- Asegúrate de usar el CSS correcto -->
 </head>
 <body>
     <div class="sidebar">
@@ -132,7 +12,7 @@
         <a href="index.html">Precios</a>
         <a href="sillas.html">Sillas</a>
         <a href="contactos.html">Contactos</a>
-        <a href="versiculos.html">Versiculos</a>
+        <a href="versiculos.html">Versículos</a>
     </div>
 
     <div class="container">
@@ -142,7 +22,6 @@
         <div class="contact-info">
             <img src="wsp.png" alt="Imagen de contacto"> <!-- Imagen primero -->
             <a href="https://api.whatsapp.com/send?phone=51923805074" target="_blank">¡Envíanos un mensaje por WhatsApp!</a> <!-- Botón debajo de la imagen -->
-            <p class="call-to-action">¡Estamos para ayudarte!</p> <!-- Mensaje adicional opcional -->
         </div>
     </div>
 </body>

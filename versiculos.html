@@ -14,9 +14,13 @@
             background-size: cover; /* Ajusta la imagen para cubrir toda el área */
             background-position: center; /* Centra la imagen en la pantalla */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
-            overflow-x: hidden; /* Evita el desplazamiento horizontal */
         }
-        
+        .container {
+            flex: 1;
+            padding: 20px;
+            margin-left: 250px; /* Espacio para el menú */
+            color: rgb(16, 5, 109); /* Asegura que el texto sea visible sobre el fondo */
+        }
         .sidebar {
             position: fixed;
             top: 0;
@@ -30,17 +34,13 @@
             background-repeat: no-repeat; /* Evita que la imagen se repita */
             border-right: 1px solid #081643;
             padding: 20px;
-            box-sizing: border-box; /* Incluye padding en el ancho total */
         }
-        
         .sidebar h2 {
             color: white; /* Asegura que el texto sea visible sobre el fondo */
-            background-color: black; /* Fondo negro para el texto "Menú" */
+            background-color: rgb(0, 0, 0); /* Fondo negro para el texto "Menú" */
             padding: 20px; /* Espacio alrededor del texto */
             margin: -20px -20px 50px -30px; /* Ajusta el margen para el rectángulo negro */
-            text-align: center; /* Centra el texto dentro del rectángulo */
         }
-        
         .sidebar a {
             display: block;
             padding: 10px;
@@ -49,57 +49,59 @@
             text-decoration: none;
             font-weight: bold;
         }
-        
         .sidebar a:hover {
             background-color: #81a5a8;
         }
-        
-        .container {
-            margin-left: 200px; /* Espacio para el menú */
-            padding: 20px;
-            flex: 1;
-            color: rgb(16, 5, 109); /* Asegura que el texto sea visible sobre el fondo */
-            max-width: calc(100% - 220px); /* Ajusta el ancho máximo según el espacio disponible */
-            box-sizing: border-box; /* Incluye padding en el ancho total */
-        }
-        
         h1 {
             color: rgb(0, 0, 0);
-            text-align: center; /* Centra el encabezado */
-            margin-bottom: 20px; /* Espacio debajo del encabezado */
         }
-        
         .versiculo {
             margin-bottom: 20px;
-            background-color: rgba(224, 229, 235, 0.5); /* Azul oscuro con transparencia */
+            background-color: #e0e5eb00; /* Azul oscuro */
             padding: 10px;
             border-radius: 5px;
         }
-        
         .versiculo strong {
             color: rgb(172, 72, 14);
         }
-        
         .versiculo p {
             color: rgb(6, 27, 90);
         }
-        
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid #ddd;
-            }
-            
-            .container {
-                margin-left: 0;
-                max-width: 100%;
-                padding: 10px;
-            }
-        }
+        /* Estilos para pantallas pequeñas (tabletas y móviles) */
+@media (max-width: 768px) {
+    .container {
+        margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .sidebar {
+        width: 20%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        height: auto; /* Ajusta la altura del menú */
+        position: relative; /* Cambia la posición para que no se solape con el contenido */
+        padding: 10px;
+        border-right: none; /* Elimina el borde derecho */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade sombra para dar profundidad */
+        background-color: rgba(244, 244, 244, 0.9); /* Fondo del menú con ligera opacidad */
+    }
+
+    .sidebar h2 {
+        margin: 0;
+        padding: 10px;
+        background-color: black;
+    }
+
+    .sidebar a {
+        margin: 5px 0;
+        padding: 8px;
+    }
+}
+
+
+    .sidebar a:hover {
+        background-color: #81a5a8; /* Color de fondo en hover */
+    }
+
+
     </style>
 </head>
 <body>
@@ -112,7 +114,7 @@
     </div>
 
     <div class="container">
-        <h1>Versículos</h1>
+        <h1>Versiculos</h1>
         <div class="versiculo">
             <strong>Proverbios 16:3</strong><br>
             "Encomienda a Jehová tus obras, Y tus pensamientos serán afirmados."
